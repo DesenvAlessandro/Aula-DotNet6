@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MP.ApiDotNet6.Domain.Entities
 {
-    internal class Purchase
+    public class Purchase
     {
         public int Id { get; private set; }
         public int ProductId { get; private set; }
@@ -37,9 +37,6 @@ namespace MP.ApiDotNet6.Domain.Entities
             PersonId = PersonId;
             ProductId = productId;
             Date = date.Value;
-
-
-
         }
     }
 }
