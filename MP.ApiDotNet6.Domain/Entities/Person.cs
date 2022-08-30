@@ -17,7 +17,8 @@ namespace MP.ApiDotNet6.Domain.Entities
 
         public Person(string document, string ame, string phone)
         {
-            Validation(document, ame, phone);  
+            Validation(document, ame, phone);
+            Purchases = new List<Purchase>();
         }
 
         public Person(int id, string name, string document, string phone)
@@ -26,7 +27,8 @@ namespace MP.ApiDotNet6.Domain.Entities
                   
             Id = id;
            
-            Validation(document, name, phone);  
+            Validation(document, name, phone);
+            Purchases = new List<Purchase>();
         }
 
         private void Validation(string document, string name, string phone)

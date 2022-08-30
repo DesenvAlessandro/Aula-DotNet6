@@ -8,21 +8,21 @@ namespace MP.ApiDotNet6.Infra.Data.Maps
     {
         public void Configure (EntityTypeBuilder<Product> builder)
         {
-            builder.ToTable("Produto");
+            builder.ToTable("produto");
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id)
-                .HasColumnName("IdProduto")
+                .HasColumnName("idproduto")
                 .UseIdentityAlwaysColumn();
 
             builder.Property(x => x.CodErp)
-                .HasColumnName("CodErp");
+                .HasColumnName("coderp");
 
             builder.Property(x => x.Name)
-                .HasColumnName("Nome");
+                .HasColumnName("nome");
 
             builder.Property(x => x.Price)
-                .HasColumnName("Preco");
+                .HasColumnName("preco");
 
             builder.HasMany(x => x.Purchases)
                 .WithOne(p => p.Product)

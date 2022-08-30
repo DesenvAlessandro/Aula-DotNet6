@@ -9,21 +9,21 @@ namespace MP.ApiDotNet6.Infra.Data.Maps
     {
         public void Configure(EntityTypeBuilder<Purchase> builder)
         {
-            builder.ToTable("Compra");
+            builder.ToTable("compra");
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id)
-                .HasColumnName("IdCompra")
+                .HasColumnName("Idcompra")
                 .UseIdentityColumn();
-
+            
             builder.Property(x => x.PersonId)
-                .HasColumnName("IdPessoa");
+                .HasColumnName("idpessoa");
 
-            builder.Property(x => x.Product)
-                .HasColumnName("IdProduto");
+            builder.Property(x => x.ProductId)
+                .HasColumnName("idproduto");
 
             builder.Property(x => x.Date)
-                .HasColumnName("DataCompra");
+                .HasColumnName("datacompra");
 
             builder.HasOne(x => x.Person)
                 .WithMany(x => x.Purchases);
